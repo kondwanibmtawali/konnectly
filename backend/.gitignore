@@ -1,0 +1,8 @@
+# Ignore SQLite databases
+*.sqlite3
+
+# Ignore other database files
+*.db
+
+#Ignore .venv
+.venv/
