@@ -5,7 +5,7 @@ Serializes midel data and converts it to JSON for the API
 """
 
 from rest_framework import serializers
-from .models import Country, Sectors, InvestmentPathway, DataLinks
+from .models import Country, Sectors, InvestmentPathway
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -25,8 +25,3 @@ class InvestmentPathwaySerializer(serializers.ModelSerializer):
         model = InvestmentPathway
         fields = "__all__"
 
-
-class DataLinksSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DataLinks
-        fields = "__all__"

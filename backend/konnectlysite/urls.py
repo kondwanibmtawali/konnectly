@@ -24,8 +24,6 @@ from konnectlysite.views import (
     SectorsDetailView,
     InvestmentPathwayListView,
     InvestmentPathwayDetailView,
-    DataLinksListView,
-    DataLinksDetailView,
 )
 
 urlpatterns = [
@@ -43,11 +41,5 @@ urlpatterns = [
         "api/investment-pathways/<int:id>/",
         InvestmentPathwayDetailView.as_view(),
         name="investment-pathway-detail",
-    ),
-    path("api/data-links/", DataLinksListView.as_view(), name="data-links-list"),
-    path(
-        "api/data-links/<int:id>/",
-        DataLinksDetailView.as_view(),
-        name="data-links-detail",
-    ),
+    )
 ]

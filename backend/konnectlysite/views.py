@@ -6,12 +6,11 @@ Kondwani Mtawali
 """
 
 from rest_framework import generics
-from .models import Country, Sectors, InvestmentPathway, DataLinks
+from .models import Country, Sectors, InvestmentPathway
 from .serializers import (
     CountrySerializer,
     SectorsSerializer,
     InvestmentPathwaySerializer,
-    DataLinksSerializer,
 )
 
 
@@ -47,13 +46,3 @@ class InvestmentPathwayDetailView(generics.RetrieveAPIView):
     serializer_class = InvestmentPathwaySerializer
     lookup_field = "id"
 
-
-class DataLinksListView(generics.ListAPIView):
-    queryset = DataLinks.objects.all()
-    serializer_class = DataLinksSerializer
-
-
-class DataLinksDetailView(generics.RetrieveAPIView):
-    queryset = DataLinks.objects.all()
-    serializer_class = DataLinksSerializer
-    lookup_field = "id"
