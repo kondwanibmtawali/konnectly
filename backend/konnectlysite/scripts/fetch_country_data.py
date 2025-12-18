@@ -1,3 +1,7 @@
+"""
+Fetches data from World Bank's API
+"""
+
 from konnectlysite.models import Country
 import os
 import sys

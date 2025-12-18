@@ -1,3 +1,7 @@
+"""
+Scripting initially used to convert DB diagram to django-python ready model class. Not needed in the end.
+"""
+
 import re
 from pathlib import Path
 

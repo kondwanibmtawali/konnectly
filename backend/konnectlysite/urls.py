@@ -1,45 +1,15 @@
 """
-URL configuration for konnectlysite project.
+URLs.py
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
 from django.contrib import admin
 from django.urls import path
-from konnectlysite.views import (
-    CountryListView,
-    CountryDetailView,
-    SectorsListView,
-    SectorsDetailView,
-    InvestmentPathwayListView,
-    InvestmentPathwayDetailView,
-)
+from . import views
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/countries/", CountryListView.as_view(), name="country-list"),
-    path("api/countries/<int:id>/", CountryDetailView.as_view(), name="country-detail"),
-    path("api/sectors/", SectorsListView.as_view(), name="sectors-list"),
-    path("api/sectors/<int:id>/", SectorsDetailView.as_view(), name="sectors-detail"),
-    path(
-        "api/investment-pathways/",
-        InvestmentPathwayListView.as_view(),
-        name="investment-pathway-list",
-    ),
-    path(
-        "api/investment-pathways/<int:id>/",
-        InvestmentPathwayDetailView.as_view(),
-        name="investment-pathway-detail",
-    )
+    path("api/countries/", views.CountryListView),
+    path("api/countries/<str:country_name>/", views.CountryDetailView),
 ]

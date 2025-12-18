@@ -1,0 +1,1 @@
+export const API_URL = "http://127.0.0.1:8000/api/countries" // Backend API used across frontend for data fetching

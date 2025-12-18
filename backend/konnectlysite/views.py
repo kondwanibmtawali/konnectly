@@ -5,44 +5,32 @@ Viewing model instances
 Kondwani Mtawali
 """
 
-from rest_framework import generics
-from .models import Country, Sectors, InvestmentPathway
-from .serializers import (
-    CountrySerializer,
-    SectorsSerializer,
-    InvestmentPathwaySerializer,
-)
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Country
+from .serializers import CountrySerializer
 
 
-class CountryListView(generics.ListAPIView):
-    queryset = Country.objects.all()
-    serializer_class = CountrySerializer
+@api_view(["GET"])
+def CountryListView(request):
+    """
+    Returns all countries for map coloring
+    """
+    countries = Country.objects.all()
+    serializer = CountrySerializer(countries, many=True)
+    return Response(serializer.data)
 
 
-class CountryDetailView(generics.RetrieveAPIView):
-    queryset = Country.objects.all()
-    serializer_class = CountrySerializer
-    lookup_field = "id"  # Use 'id' or another unique field
+@api_view(["GET"])
+def CountryDetailView(request, country_name):
+    """
+    Returns detailed information of a single country. Used when user clicks on country and opens modal.
+    """
+    country = Country.objects.get(name__iexact=country_name)
+    serializer = CountrySerializer(country)
+    return Response(serializer.data)
 
 
-class SectorsListView(generics.ListAPIView):
-    queryset = Sectors.objects.all()
-    serializer_class = SectorsSerializer
-
-
-class SectorsDetailView(generics.RetrieveAPIView):
-    queryset = Sectors.objects.all()
-    serializer_class = SectorsSerializer
-    lookup_field = "id"
-
-
-class InvestmentPathwayListView(generics.ListAPIView):
-    queryset = InvestmentPathway.objects.all()
-    serializer_class = InvestmentPathwaySerializer
-
-
-class InvestmentPathwayDetailView(generics.RetrieveAPIView):
-    queryset = InvestmentPathway.objects.all()
-    serializer_class = InvestmentPathwaySerializer
-    lookup_field = "id"
-
+"""
+More views to be added once Serializers are set up
+"""

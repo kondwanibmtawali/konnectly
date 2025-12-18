@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/* 
+App.jsx - 11/28/2025
+Manages Routing for pages -> Remove home Page when dev complete
+*/
 import './App.css'
 import { Link, Routes, Route } from "react-router-dom";
-import AfricaMap from './pages/AfricanMap.jsx';
-
-//import AfricaInteractive from './pages/AfricanMap'
-
+import AfricaMap from './pages/AfricaOverview.jsx';
+import AfricanCountry from './pages/CountryPage.jsx';
+import InvestmentPage from './pages/Investments.jsx';
 
 function App() {
   return (
@@ -19,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Welcome to the Map App</h1>} />
         <Route path="/test" element={<AfricaMap />} />
+        <Route path="/country/:name" element={<AfricanCountry />} />
+        <Route path="/investment/:name" element={<InvestmentPage />} />
       </Routes>
     </div>
   );
