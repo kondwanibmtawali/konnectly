@@ -107,16 +107,14 @@ export default function AfricanCountry() {
             {/* Country Name Display*/}
             <h1
                 style={{
-                    position: "absolute",
-                    top: "40px",
+                    position: "fixed",
+                    top: "10px",
                     left: "25%",
-                    transform: "translateX(-50%)",
                     color: "white",
                     fontSize: "3.8rem",
                     fontWeight: "bold",
                     textShadow: "0 4px 12px rgba(0,0,0,0.8)",
                     zIndex: 200,
-                    pointerEvents: "none",
                 }}
             >
                 {displayName || "Loading..."}
@@ -142,20 +140,21 @@ export default function AfricanCountry() {
                     right: 0,
                     top: 0,
                     width: "420px",
-                    height: "100vh",
+                    height: "80vh",
                     background: "white",
                     boxShadow: "-10px 0 40px rgba(0,0,0,0.4)",
                     overflowY: "auto",
-                    padding: "120px 40px 40px 40px",
+                    padding: "20px 40px 40px 40px",
                     zIndex: 150,
                     color: "black",
                 }}
             >
+
                 {/* Generate Investment Pathway Button: Navigates to Investment Page */}
                 <button
                     onClick={() => navigate(`/investment/${encodeURIComponent(selected.name)}`, { state: { countryData: selected } })}
                     style={{
-                        marginTop: "40px",
+                        marginTop: "20px",
                         padding: "16px 32px",
                         fontSize: "1.2rem",
                         background: "#27ae60",
@@ -170,11 +169,12 @@ export default function AfricanCountry() {
                     Generate Investment Opportunities
                 </button>
 
+
                 {/* Reusable Component: Loops through data in API + ensures correct display */}
                 {/* Take notes on AI Generated: InfoItem Loop Structure */}
                 {(() => {
                     const InfoItem = ({ label, value, suffix = "" }) => (
-                        <div style={{ marginBottom: "28px" }}>
+                        <div style={{ marginBottom: "18px", textAlign: "left" }}>
                             <strong style={{ fontSize: "1.2rem" }}>{label}:</strong>
                             <span style={{ marginLeft: "12px", fontSize: "1.1rem" }}>
                                 {value ?? "N/A"}{suffix}
@@ -188,6 +188,17 @@ export default function AfricanCountry() {
                                 <p style={{ fontSize: "1.3rem", color: "#666" }}>Loading country data...</p>
                             ) : selected ? (
                                 <>
+                                    {/* Title */}
+                                    <h2 style={{
+                                        fontSize: "1.8rem",
+                                        marginTop: "12px",
+                                        fontWeight: "bold",
+                                        margin: "0 0 32px 0",
+                                        color: "#333",
+                                        textAlign: "center"
+                                    }}>
+                                        Economic Indicators
+                                    </h2>
                                     <InfoItem
                                         label="GDP"
                                         value={selected.gdp && `$${selected.gdp.toLocaleString()}`}
@@ -250,14 +261,14 @@ export default function AfricanCountry() {
                                         value={selected.political_stability_percentile && `${selected.political_stability_percentile.toFixed(1)}th percentile`}
                                     />
 
-
                                 </>
+
 
 
                             ) : (
 
                                 <p style={{ fontSize: "1.3rem", color: "#666" }}>
-                                    No data available for {displayName} {/* Countries w/ spaces in name need debugging */}
+                                    No data available for {displayName}
                                 </p>
 
                             )}

@@ -31,7 +31,7 @@ export default function AfricaMap() {
         const projection = geoMercator()
             .center([20, 5])
             .scale(width * 0.30)
-            .translate([width / 2, height / 2.1]);
+            .translate([width / 2, height / 2.2]);
 
         //Converts GeoJSON components into <svg> path formats
         const pathGenerator = geoPath().projection(projection);
@@ -95,9 +95,9 @@ export default function AfricaMap() {
             <div
                 style={{
                     position: "fixed",
-                    top: "90px",
-                    left: "20px",
-                    maxWidth: "420px",
+                    top: "30px",
+                    left: "10px",
+                    maxWidth: "400px",
                     background: "rgba(17, 17, 17, 0.85)",
                     backdropFilter: "blur(10px)",
                     color: "white",

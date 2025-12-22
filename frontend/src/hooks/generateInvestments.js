@@ -34,7 +34,7 @@ export const useGenerateInvestment = (countryData) => {
         // Prompt is a defined string 
         // Accesses country data(w/ specified formatting & potential null values) 
         // Data passed as parameter in func call
-        const prompt = `I'm interested in make foreign direct investment in African countries. Provide me with a detailed, fact-based, investment opportunities response for ${countryData.name}.
+        const prompt = `I'm a foreigner, interested in making foreign direct investment in African countries. Provide me with a detailed, fact-based, investment opportunities response for ${countryData.name}.
 
 Use this API data:
 - GDP: $${countryData.gdp?.toLocaleString() || "N/A"} (growth: ${countryData.gdp_growth_rate || "N/A"}%)
@@ -51,11 +51,11 @@ Use this API data:
 Generate the following in plaintext format:
 1) Begin with a simple disclaimar that this is an AI generated investment strategy.
 2) Without an overview, provide 3 Investment Pathways (numbered, 3-4 sentences each, with sector, rationale based on data, and a proven entry strategy)
-3) For Each Investment Pathway, construct a detailed step by step approach an individual living in the United States can take to participate in the investment pathway.
+3) For Each Investment Pathway, construct a detailed step by step approach an individual living in a foreign country can take to participate in the investment pathway.
 4) Risks & Mitigation (bullet points, grounded in data like political responsibility)
 
 
-Be professional, actionable, and optimistic but realistic for 2025-2030. Base your information on data, citing sources. Output response with a consistent structure.`;
+Be professional, actionable, and optimistic but realistic for 2025-2030. Base your information on data, citing sources with links. Output response with a consistent structure.`;
 
         // Calls Grok-4 to generate prompt response  
         openai.chat.completions
