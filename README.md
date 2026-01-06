@@ -36,7 +36,7 @@ A Python virtual environment managed with UV is used to isolate project-specific
 React is a JavaScript frontend library used for building user interfaces through reusable components and state management. It enables Konnectly to dynamically render data-driven views in response to user interaction.
 
 ### Grok-4 & OpenAI
-Used together to give your React app AI-generated investment analysis based on country-level economic data
+Used together to give an AI-generated investment analysis based on country-level economic data
 
 ### Vite
 Vite serves as the frontend build tool and development server. It provides instant feedback during development through fast module bundling and hot reloading, eliminating the need for full page or server reloads and enabling a smooth development experience when combined with React.
