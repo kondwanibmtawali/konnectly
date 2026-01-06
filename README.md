@@ -1,10 +1,10 @@
-# ⚙️ Development Environment & Technology Stack
+#  Development Environment & Technology Stack
 
 Konnectly is built as a full-stack web application using a modern frontend–backend architecture. The project leverages a combination of development tools, backend frameworks, frontend libraries, and data visualization technologies to support data-driven exploration of African investment opportunities.
 
 ---
 
-## 🖥️ Development Environment
+##  Development Environment
 
 ### Visual Studio Code (VS Code)
 Visual Studio Code is the primary source code editor and integrated development environment (IDE) used for writing, debugging, and managing both frontend and backend code. Its extension ecosystem and debugging tools facilitate efficient development across the project.
@@ -14,7 +14,7 @@ Ubuntu is the Linux-based operating system environment used for development and 
 
 ---
 
-## 🔧 Backend Technologies
+##  Backend Technologies
 
 ### Django REST Framework (DRF)
 Django REST Framework is used to design and expose RESTful APIs that serve structured JSON data to the frontend. It acts as the core of the backend, handling data serialization, API endpoint creation, and communication between the server and client layers.
@@ -30,7 +30,7 @@ A Python virtual environment managed with UV is used to isolate project-specific
 
 ---
 
-## 🎨 Frontend Technologies
+##  Frontend Technologies
 
 ### React
 React is a JavaScript frontend library used for building user interfaces through reusable components and state management. It enables Konnectly to dynamically render data-driven views in response to user interaction.
@@ -46,7 +46,7 @@ D3-Geo is a JavaScript data visualization library specializing in geographic pro
 
 ---
 
-## 🔁 Data Fetching & State Management
+##  Data Fetching & State Management
 
 ### TanStack React Query
 TanStack React Query is a data-fetching and server-state management library for React applications. It handles asynchronous API requests, caching, background updates, and request synchronization. In Konnectly, React Query manages communication with the Django backend, tracks loading and error states, and improves performance by reducing redundant network requests.
@@ -56,14 +56,14 @@ Axios is a JavaScript HTTP client library used for making asynchronous requests 
 
 ---
 
-## 📦 Package Management
+##  Package Management
 
 ### Node Package Manager (NPM)
 Node Package Manager (NPM) is used to install, update, and manage frontend JavaScript dependencies. All required libraries are stored in the `node_modules` directory, ensuring consistent dependency management and reproducible builds across development environments.
 
 ---
 
-## 🧩 System Overview
+##  System Overview
 
 Collectively, these technologies form a modular full-stack architecture:
 - **Frontend:** React, Vite, D3-Geo, React Query, Axios, OpenAI API, Grok-4(xAI API)
